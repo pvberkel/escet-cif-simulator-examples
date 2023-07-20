@@ -1,0 +1,185 @@
+:root {
+  --hsplit: 0%;
+  --vsplit: 50%;
+  --svgSplit: 50%;
+  --consoleDisplay: inline-block;
+  --guiDisplay: inline-block;
+  --svg1Display: inline-block;
+  --svg2Display: inline-block;
+  --horizontalResizerWidth: 3px;
+  --verticalResizerWidth: 3px;
+}
+
+#console-input {
+  display: var(--consoleDisplay);
+  width:100%;
+  height:calc(100% - var(--hsplit));
+}
+
+#console-input #prompt-user-text {
+  width:100%;
+}
+
+#console-input #prompt-user-input-span {
+  display:block;
+  overflow:hidden;
+  padding-right:10px;
+}
+
+#console-input #prompt-user-button {
+   float:left;
+}
+
+.block {
+}
+
+.block-title {
+  font-weight: bold;
+}
+
+.block-content {
+  background-color: rgb(240,240,240);
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgb(210,210,210);
+  overflow: auto;
+  padding: 0px;
+  margin: 0;
+  border-radius: 3px;
+  font-size: 12px;
+  height: 100%;
+}
+
+#blocks {
+  height: calc(100% - 22px - var(--horizontalResizerWidth));
+}
+
+#stdout-wrapper {
+  height: 100%;
+}
+
+html, body { 
+  height: 100%; 
+  margin: 0px;
+  padding: 0px;
+}
+
+#main {
+  position:absolute;
+  overflow-y:hidden;
+  top:20px;
+  bottom:20px;
+  width: 100%;
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: red; */
+  color: white;
+  text-align: center;
+}
+
+#main-view {
+  width: 100%;
+  height:var(--hsplit);
+  background-color: gray;
+  display: flex;
+}
+
+#gui-input {
+  display: var(--guiDisplay);
+  height: 100%;
+  width: var(--vsplit);
+  background-color: Yellow;
+}
+
+#svg {
+  width: calc(100% - var(--vsplit));
+  background-color: whitesmoke;
+  display: flex;
+}
+
+#svg1 {
+  display: var(--svg1Display);
+  height: 100%;
+  width: var(--svgSplit);
+  background-color: white;
+}
+
+#svg2 {
+  display: var(--svg2Display);
+  height: 100%;
+  width: calc(100% - var(--svgSplit));
+  background-color: blue;
+}
+
+.select-item {
+  display: inline-block;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#consoleChkBox  {
+  display: var(--consoleDisplay);
+}
+
+#consoleChkBox-label  {
+  display: var(--consoleDisplay);
+}
+
+#guiInputChkBox {
+  display: var(--guiDisplay);
+}
+
+#guiInputChkBox-label {
+  display: var(--guiDisplay);
+}
+
+#svg1ChkBox {
+  display: var(--svg1Display);
+}
+
+#svg1ChkBox-label {
+  display: var(--svg1Display);
+}
+
+#svg2ChkBox {
+  display: var(--svg2Display);
+}
+
+#svg2ChkBox-label {
+  display: var(--svg2Display);
+}
+
+.horizontal-resizer {
+  background-color: #cbd5e0;
+  cursor: ns-resize;
+  height: var(--horizontalResizerWidth);
+  width: 100%;
+}
+
+.horizontal-resizer:hover {
+  background-color: gray;
+}
+
+.vertical-resizer {
+  background-color: #cbd5e0;
+  cursor: ew-resize;
+  height: 100%;
+  width: var(--verticalResizerWidth);
+}
+
+.vertical-resizer:hover {
+  background-color: gray;
+}
+
+#svg-object {
+  max-height: 95%; 
+  max-width: 95%;
+}

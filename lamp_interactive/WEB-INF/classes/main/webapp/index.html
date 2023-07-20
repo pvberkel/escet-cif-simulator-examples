@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main page</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" charset="utf-8" src="teavm/stdout.js"></script>
+    <script type="text/javascript" charset="utf-8" src="teavm/classes.js"></script>
+    <script type="text/javascript" charset="utf-8" src="svg0.json"></script>
+    <script type="text/javascript" charset="utf-8" src="svg1.json"></script>
+    <script type="text/javascript" charset="utf-8" src="teavm/sprintf.js"></script>
+    <script type="text/javascript">
+        function sprintf(format, args) {
+            let r = sprintfJS(format, args);
+            return(r);
+        }
+    </script>
+  </head>
+<body onload="main()" id="content">
+  <div id="select">
+    <ul>
+      <li class="select-item">
+        <input id="consoleChkBox" name="consoleChkBox" type="checkbox">
+        <label id="consoleChkBox-label" for="consoleChkBox">logging</label>
+      </li>
+
+      <li class="select-item">
+        <input id="guiInputChkBox" name="guiInputChkBox" type="checkbox">
+        <label id="guiInputChkBox-label" for="guiInputChkBox">input</label>
+      </li>
+
+      <li class="select-item">
+        <input id="svg1ChkBox" name="svg1ChkBox" type="checkbox">
+        <label id="svg1ChkBox-label" for="svg1ChkBox">svg1</label>
+      </li>
+
+      <li class="select-item">
+        <input id="svg2ChkBox" name="svg2ChkBox" type="checkbox">
+        <label id="svg2ChkBox-label" for="svg2ChkBox">svg2</label>
+      </li>
+    </ul>
+  </div>
+  <div id="main">
+      <div id="main-view">
+        <div id="gui-input"></div>
+        <div class="vertical-resizer" id="dragMe-gui-input" data-direction="vertical"></div>
+        <div id="svg">
+          <div id="svg1">
+            <object id="svg1-object" data="svg0.svg" type="image/svg+xml"></object>
+          </div>
+          <div class="vertical-resizer" id="dragMe-svg" data-direction="vertical"></div>
+          <div id="svg2">
+            <object id="svg2-object" data="svg1.svg" type="image/svg+xml"></object>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-resizer" id="dragMe-main" data-direction="horizontal"></div>
+      <div id=console-input>
+        <div id="blocks">
+          <div class="block" id="stdout-wrapper">
+            <!--div class="block-title">stdout</div-->
+            <div class="block-content" id="stdout"></div>
+          </div>
+        </div>
+        <button id="prompt-user-button">Submit</button>
+        <span id=prompt-user-input-span> <input type="text" id="prompt-user-text" name="prompt-user-text"></span> 
+      </div>
+  </div>
+  <div id="footer"></div>
+</body>
+</html>
